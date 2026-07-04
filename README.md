@@ -30,7 +30,7 @@ The project begins with the two-dimensional Heat Equation solved using the expli
 
 # Development Log
 
-## Version 0.1 — Explicit Finite Difference Method (FDM)
+## Version 0 — Explicit Finite Difference Method (FDM)
 
 ### Features
 
