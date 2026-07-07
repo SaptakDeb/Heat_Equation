@@ -30,63 +30,42 @@ The project begins with the two-dimensional Heat Equation solved using the expli
 
 # Development Log
 
-## Version 0 — Explicit Finite Difference Method (FDM)
+# Version 0 — Basic FTCS Heat Equation Solver
 
-### Features
+## Features
 
-* Implemented a 2D explicit Finite Difference Method (FDM) solver for the heat equation.
-* Structured 50 × 50 computational grid.
-* Animated temperature evolution.
-* Adjustable diffusion coefficient (`alpha`) and number of iterations.
-
----
-
-## Observations
-
-### Trial 1 — Single Heat Source
-
-**Initial Condition**
-* 100 units of heat at the centre of the plate `(25,25)`.
-* All other cells initialized to 0.
-
-**Observation**
-* Heat diffused symmetrically from the centre toward the boundaries.
-* After 200 iterations, the total heat on the plate was **97.507**.
-
-**Validity**
-* The decrease in total heat is expected because the boundary cells remain fixed at 0, allowing heat to leave the computational domain. This is consistent with fixed-temperature (Dirichlet) boundary conditions rather than an insulated plate.
+- Implemented a 2D heat equation solver using the FTCS (Forward Time, Central Space) method.
+- 50 × 50 computational grid.
+- Animated heat diffusion over time.
+- Adjustable thermal diffusivity (`alpha`) and number of iterations.
 
 ---
 
-### Trial 2 — Two Heat Sources
+## Notes
 
-**Initial Condition**
-* 200 units of heat at `(12,12)`.
-* 200 units of heat at `(37,37)`.
-
-**Observation**
-* Two independent diffusion fronts formed and gradually interacted as they expanded.
-* After 200 iterations, the total heat remaining on the plate was **267.45**.
-
-**Validity**
-* Heat loss is again expected due to the fixed-temperature boundaries. The locations of the heat sources also influence how quickly heat reaches the boundaries and therefore how much energy remains within the computational domain after a fixed number of iterations.
+- Tested with both single and multiple heat sources.
+- Heat diffused smoothly across the plate as expected.
+- Total heat decreased over time because the plate used fixed-temperature (Dirichlet) boundaries.
 
 ---
 
-## Future Plans
-* Implement insulated (Neumann) boundary conditions and compare heat conservation.
-* Investigate the effect of changing the diffusion coefficient (`alpha`) on stability and diffusion rate.
-* Compare different grid resolutions.
-* Introduce internal obstacles and study heat flow around them.
-* Derive the finite difference update equation directly from the continuous heat equation.
-* Progress toward irregular point distributions and eventually explore meshless methods such as RBF-FD.
+# Version 1 — Improved FTCS Solver
+
+## Features
+
+- Added configurable simulation parameters (`dx`, `dy`, `dt`, `alpha`, and grid size).
+- Implemented a numerical stability check before the simulation begins.
+- Replaced the single heated cell with a central heated region for more realistic diffusion.
+- Improved visualization using a fixed colour scale and clearer animation.
+- Cleaned up and reorganized the code for improved readability and maintainability.
 
 ---
 
-## Tools
-* GNU Octave
-* Finite Difference Method (FDM)
+## Notes
 
----
+- The stability check prevents unstable simulations caused by an excessively large time step.
+- Fixed colour scaling makes temperature changes easier to compare throughout the simulation.
+- This version establishes a cleaner foundation for future additions such as boundary conditions, multiple materials, and more advanced numerical methods.
+
 
 
