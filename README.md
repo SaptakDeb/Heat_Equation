@@ -67,5 +67,22 @@ The project begins with the two-dimensional Heat Equation solved using the expli
 - Fixed colour scaling makes temperature changes easier to compare throughout the simulation.
 - This version establishes a cleaner foundation for future additions such as boundary conditions, multiple materials, and more advanced numerical methods.
 
+---
+
+# Version 2 — Boundary Conditions
+
+## Features
+
+- Added support for fixed-temperature (Dirichlet) and insulated (Neumann) boundary conditions.
+- Switch between boundary conditions with a single setting.
+- Preserved the FTCS solver while extending its physical realism.
+- Compared heat diffusion under different edge constraints.
+
+---
+
+## Notes
+
+- Fixed-temperature boundaries allow heat to leave the plate, while insulated boundaries retain heat within the domain.
+- This version introduces boundary conditions, a fundamental concept in numerical heat transfer and computational physics.
 
 
