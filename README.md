@@ -85,4 +85,22 @@ The project begins with the two-dimensional Heat Equation solved using the expli
 - Fixed-temperature boundaries allow heat to leave the plate, while insulated boundaries retain heat within the domain.
 - This version introduces boundary conditions, a fundamental concept in numerical heat transfer and computational physics.
 
+---
+
+# Version 3 — Heat Sources and Simulation Diagnostics
+
+## Features
+
+- Added internal heat generation to simulate a continuous heat source within the plate.
+- Introduced temperature probes to monitor the thermal history at selected locations.
+- Recorded and plotted the total heat in the system throughout the simulation.
+- Extended the solver with simulation diagnostics while preserving the explicit FTCS method.
+
+---
+
+## Notes
+
+- The internal heat source continuously injects energy into a specified region, creating a localized heating effect.
+- Temperature probes provide insight into how heat propagates to different parts of the domain over time.
+- The total heat plot helps visualize the overall energy evolution of the system and demonstrates the effect of continuous heat generation.
 
