@@ -104,3 +104,23 @@ The project begins with the two-dimensional Heat Equation solved using the expli
 - Temperature probes provide insight into how heat propagates to different parts of the domain over time.
 - The total heat plot helps visualize the overall energy evolution of the system and demonstrates the effect of continuous heat generation.
 
+---
+
+# Version 4 — Variable Material Properties
+
+## Features
+
+- Added support for spatially varying thermal diffusivity to simulate composite materials.
+- Introduced a circular low-diffusivity region embedded within the base material.
+- Simulated heat propagation across a material interface using the existing FTCS solver.
+- Positioned temperature probes on opposite sides of the interface to compare heat transfer through different materials.
+- Included an internal heat source near the material boundary to observe the effect of changing thermal diffusivity.
+
+---
+
+## Notes
+
+- Materials with lower thermal diffusivity conduct heat more slowly, delaying temperature propagation through those regions.
+- The probe located within the low-diffusivity insert exhibits a slower temperature rise than the probe in the surrounding material, illustrating the influence of heterogeneous material properties.
+- This version extends the solver from homogeneous to composite domains, introducing a key concept used in engineering heat transfer, materials science, and computational physics.
+
